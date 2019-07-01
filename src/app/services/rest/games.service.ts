@@ -20,7 +20,7 @@ export class GamesService {
 
   public fetchGames(date: Date): BehaviorSubject<Game[]> {
 
-    this.http.get<any>(`http://localhost:3000/baseball?date=${date.toLocaleString()}`).subscribe(res => {
+    this.http.get<any>(`http://192.168.0.20:3000/baseball?date=${date.toLocaleString()}`).subscribe(res => {
 
       res = res.dates[0].games;
       let gamesArr = res.map(el => {

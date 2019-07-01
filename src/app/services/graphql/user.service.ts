@@ -31,4 +31,23 @@ export class UserService {
     `
     }).pipe(map(result => result.data.allUsers));
   }
+
+  public login(username: string, password: string) {
+
+    return this.apolloSvc.query({
+      query: gql`
+      query allCourses {
+        loginUser($username:string, $password: string) {
+          id
+          firstName
+          lastName
+          userName
+        }
+      }
+    `,
+    variables: {["username"]: username }
+    }).pipe(map(result => result.data.allUsers));
+
+  }
+
 }

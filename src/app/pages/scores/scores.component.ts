@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Game } from 'src/app/shared/models/game';
+import { Team } from 'src/app/shared/models/team';
+import { GamesService } from 'src/app/services/rest/games.service';
 
 @Component({
   selector: 'app-scores',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoresComponent implements OnInit {
 
-  constructor() { }
+  games: Game[] = [];
 
-  ngOnInit() {
+  constructor(private gamesSvc: GamesService) {
+
   }
 
-}
+  ngOnInit() {
+    this.games = this.gamesSvc.games.value;
+    setInterval(() => {
+      this.gamesSvc.fetchGames(new Date()).subscribe(res => {
+        this.games = res;
+      });
+    }, 1000 * 20);
+  }
+
+  }

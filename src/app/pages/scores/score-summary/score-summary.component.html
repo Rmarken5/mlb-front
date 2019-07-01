@@ -1,0 +1,32 @@
+<section class='game-container'>
+  <!-- Away Team -->
+
+  <section class='game-header'>
+    <p>{{game.dateTime.toLocaleString()}}</p>
+  </section>
+  <section class='team-section'>
+    <section class='home-away'>Away</section>
+    <section class='team-icon'>
+      <img [src]='game.awayTeam.teamIconUrl' />
+    </section>
+    <section class='team-name'>
+      <p>{{game.awayTeam.teamName}}</p>
+    </section>
+    <section class='score'>
+      <p>{{game.awayTeam.runs}}</p>
+    </section>
+  </section>
+  <!-- Home Team -->
+  <section class='team-section'>
+    <section class='home-away'>Home</section>
+    <section class='team-icon'>
+      <img [src]='game.homeTeam.teamIconUrl' />
+    </section>
+    <section class='team-name'>
+      <p>{{game.homeTeam.teamName}}</p>
+    </section>
+    <section class='score'>
+      <p>{{game.homeTeam.runs}}</p>
+    </section>
+  </section>
+</section>

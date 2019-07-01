@@ -8,6 +8,7 @@ import { ApolloModule, Apollo } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     ApolloModule,
     HttpLinkModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

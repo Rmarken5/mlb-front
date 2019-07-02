@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'apollo-link';
 import { BehaviorSubject } from 'rxjs';
 import { Game } from 'src/app/shared/models/game';
-import { map } from 'rxjs/internal/operators/map';
 import { Team } from 'src/app/shared/models/team';
 
 @Injectable({
@@ -47,6 +45,18 @@ export class GamesService {
         game.homeTeam = homeTeam;
         game.dateTime = new Date(el.gameDate);
         game.isStarted = el.status.statusCode === 'I' ? true : el.status.statusCode === 'F' ? true : false;
+        if (el.linescore) {
+          game.isStarted = true;
+          game.isTop = el.linescore.isTopInning;
+          game.inning = el.linescore.currentInning;
+          game.batter = el.linescore.offense.batter.fullName;
+          game.balls = el.linescore.balls;
+          game.strikes = el.linescore.strikes;
+          game.outs = el.linescore.outs;
+
+        }
+
+
         return game;
       });
 

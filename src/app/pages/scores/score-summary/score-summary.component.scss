@@ -5,17 +5,17 @@
   height: 10rem;
 
 
-  .game-header{
+  .game-header {
     display: flex;
     width: 100%;
     padding: .33rem;
     border: solid 1px;
     justify-content: center;
 
-    p{
+    p {
       width: 66%;
       text-align: center;
-      margin:0px;
+      margin: 0px;
     }
   }
 
@@ -26,8 +26,9 @@
     height: 2rem;
     justify-content: left;
     align-items: center;
-    padding:.33rem;
+    padding: .33rem;
     border: solid 1px;
+
     img {
       height: 2rem;
       width: 2rem;
@@ -50,6 +51,48 @@
       justify-content: left;
       width: 10%;
     }
+  }
+
+  .foot {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: .33rem;
+    border: solid 1px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    .inning {
+      width: 5%;
+    }
+
+    .carat {
+      justify-content: space-around;
+      width: 5%;
+
+      img {
+        height: 2rem;
+        width: 2rem;
+      }
+
+    }
+
+    .batter {
+      width: 55%;
+      justify-content: left;
+    }
+
+    .count {
+      width: 17%;
+      justify-content: space-around;
+    }
+
+    .outs {
+      width: 17%;
+      justify-content: space-around;
+    }
+
   }
 
 }

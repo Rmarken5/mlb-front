@@ -29,4 +29,16 @@
       <p>{{game.homeTeam.runs}}</p>
     </section>
   </section>
+  <section class="foot">
+    <ng-container *ngIf='game.isStarted'>
+      <section class="inning">{{game.inning}}</section>
+      <section class="carat">
+        <img
+          [src]='game.isTop ? "assets/icons/round-arrow_drop_up-24px.svg" : "assets/icons/round-arrow_drop_down-24px.svg"'>
+      </section>
+      <section class='batter'>{{game.batter}}</section>
+      <section class='count'>Count: {{game.balls}}-{{game.strikes}}</section>
+      <section class='outs'>Outs: {{game.outs}}</section>
+    </ng-container>
+  </section>
 </section>

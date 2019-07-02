@@ -5,4 +5,10 @@ export class Game {
   awayTeam: Team;
   dateTime: Date;
   isStarted: boolean;
+  inning: string;
+  isTop: boolean;
+  batter: string;
+  balls: string;
+  strikes: string;
+  outs: string;
 }

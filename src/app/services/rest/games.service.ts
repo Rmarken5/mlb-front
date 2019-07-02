@@ -3,18 +3,23 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { Game } from 'src/app/shared/models/game';
 import { Team } from 'src/app/shared/models/team';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GamesService {
 
-  private _games: BehaviorSubject<Game[]> = new BehaviorSubject<Game[]>([]);
+  private _games: BehaviorSubject<Game[]>;
 
+  public games$: Observable<Game[]>;
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this._games =  new BehaviorSubject<Game[]>([]);
+    this.games$ = this._games.asObservable();
+   }
 
   public fetchGames(date: Date): BehaviorSubject<Game[]> {
 
@@ -70,8 +75,8 @@ export class GamesService {
     this._games.next(games);
   }
 
-  public get games(): BehaviorSubject<Game[]> {
-    return this._games;
+  public get games(): Observable<Game[]> {
+    return this.games$;
   }
 
 }

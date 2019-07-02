@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/app/shared/models/game';
 import { Team } from 'src/app/shared/models/team';
 import { GamesService } from 'src/app/services/rest/games.service';
+import { startWith } from 'rxjs/operators';
+import { interval } from 'rxjs/internal/observable/interval';
 
 @Component({
   selector: 'app-scores',
@@ -17,12 +19,11 @@ export class ScoresComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.games = this.gamesSvc.games.value;
-    setInterval(() => {
-      this.gamesSvc.fetchGames(new Date()).subscribe(res => {
+     interval(1000 * 5).pipe(startWith(0)).subscribe(num =>{
+      this.gamesSvc.fetchGames(new Date()).subscribe(res =>{
         this.games = res;
       });
-    }, 1000 * 20);
+    });
   }
 
-  }
+}

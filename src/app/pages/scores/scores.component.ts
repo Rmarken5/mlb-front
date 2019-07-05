@@ -19,11 +19,14 @@ export class ScoresComponent implements OnInit {
   }
 
   ngOnInit() {
-     interval(1000 * 5).pipe(startWith(0)).subscribe(num =>{
+    this.gamesSvc.fetchGames(new Date()).subscribe(res =>{
+      this.games = res;
+    });
+     /* interval(1000 * 5).pipe(startWith(0)).subscribe(num =>{
       this.gamesSvc.fetchGames(new Date()).subscribe(res =>{
         this.games = res;
       });
-    });
+    }); */
   }
 
 }

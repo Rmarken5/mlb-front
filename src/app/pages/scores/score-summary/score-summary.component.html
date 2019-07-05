@@ -13,7 +13,7 @@
         [src]='game.isTop ? "assets/icons/round-arrow_drop_up-24px.svg" : "assets/icons/round-arrow_drop_down-24px.svg"'>
     </section>
   </section>
-  <section class='team-section'>
+  <section class='team-section' [ngClass]='game.awayTeam.teamCode'>
     <section class='home-away'>Away</section>
     <section class='team-icon'>
       <img [src]='game.awayTeam.teamIconUrl' />
@@ -26,7 +26,7 @@
     </section>
   </section>
   <!-- Home Team -->
-  <section class='team-section'>
+  <section class='team-section'  [ngClass]='game.homeTeam.teamCode'>
     <section class='home-away'>Home</section>
     <section class='team-icon'>
       <img [src]='game.homeTeam.teamIconUrl' />

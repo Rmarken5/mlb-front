@@ -26,23 +26,26 @@ export class GamesService {
     this.http.get<any>(`http://192.168.0.20:3000/baseball?date=${date.toLocaleString()}`).subscribe(res => {
 
       res = res.dates[0].games;
-      let gamesArr = res.map(el => {
-        let game: Game = new Game();
-        let homeTeam: Team = new Team();
-        let awayTeam: Team = new Team();
-        let resHome = el.teams.home;
-        let resaway = el.teams.away;
+      const gamesArr = res.map(el => {
+        const game: Game = new Game();
+        const homeTeam: Team = new Team();
+        const awayTeam: Team = new Team();
+        const resHome = el.teams.home;
+        const resaway = el.teams.away;
+
 
 
         homeTeam.teamName = resHome.team.shortName;
         homeTeam.runs = resHome.score;
-        homeTeam.teamIconUrl = `https://a.espncdn.com/i/teamlogos/mlb/500/${resHome.team.abbreviation}.png`;
+        homeTeam.teamCode = resHome.team.abbreviation.toLowerCase();
+        homeTeam.teamIconUrl = `https://a.espncdn.com/i/teamlogos/mlb/500/${homeTeam.teamCode}.png`;
         homeTeam.wins = resHome.leagueRecord.wins;
         homeTeam.losses = resHome.leagueRecord.losses;
 
         awayTeam.teamName = resaway.team.shortName;
         awayTeam.runs = resaway.score;
-        awayTeam.teamIconUrl = `https://a.espncdn.com/i/teamlogos/mlb/500/${resaway.team.abbreviation}.png`;
+        awayTeam.teamCode = resaway.team.abbreviation.toLowerCase();
+        awayTeam.teamIconUrl = `https://a.espncdn.com/i/teamlogos/mlb/500/${awayTeam.teamCode}.png`;
         awayTeam.wins = resaway.leagueRecord.wins;
         awayTeam.losses = resaway.leagueRecord.losses;
 

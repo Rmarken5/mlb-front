@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScoresComponent } from './pages/scores/scores.component';
 import { ScoresModule } from './pages/scores/scores.module';
+import { SignInModule } from './pages/sign-in/sign-in.module';
 
 const routes: Routes = [
   { path: '', component: SignInComponent, outlet: 'signIn' },
@@ -18,10 +19,10 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     ScoresModule,
+    SignInModule,
   ],
   exports: [RouterModule],
   declarations: [
-    SignInComponent,
    ]
 })
 export class AppRoutingModule { }

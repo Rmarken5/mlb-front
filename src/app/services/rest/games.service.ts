@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Game } from 'src/app/shared/models/game';
 import { Team } from 'src/app/shared/models/team';
 import { Observable } from 'rxjs';
-
+import {environment} from '../../../../src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +13,8 @@ export class GamesService {
   private _games: BehaviorSubject<Game[]>;
 
   public games$: Observable<Game[]>;
+
+
 
   constructor(
     private http: HttpClient
@@ -23,7 +25,7 @@ export class GamesService {
 
   public fetchGames(date: Date): BehaviorSubject<Game[]> {
 
-    this.http.get<any>(`http://192.168.0.20:3000/baseball?date=${date.toLocaleString()}`).subscribe(res => {
+    this.http.get<any>(`${environment.server}:3000/baseball?date=${date.toLocaleString()}`).subscribe(res => {
 
       res = res.dates[0].games;
       const gamesArr = res.map(el => {

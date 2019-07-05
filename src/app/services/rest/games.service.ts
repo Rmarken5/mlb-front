@@ -17,9 +17,9 @@ export class GamesService {
   constructor(
     private http: HttpClient
   ) {
-    this._games =  new BehaviorSubject<Game[]>([]);
+    this._games = new BehaviorSubject<Game[]>([]);
     this.games$ = this._games.asObservable();
-   }
+  }
 
   public fetchGames(date: Date): BehaviorSubject<Game[]> {
 
@@ -51,16 +51,17 @@ export class GamesService {
         game.dateTime = new Date(el.gameDate);
         game.isStarted = el.status.statusCode === 'I' ? true : el.status.statusCode === 'F' ? true : false;
         if (el.linescore) {
+          const linescore = el.linescore;
           game.isStarted = true;
-          game.isTop = el.linescore.isTopInning;
-          game.inning = el.linescore.currentInning;
-          game.batter = el.linescore.offense.batter.fullName;
-          game.balls = el.linescore.balls;
-          game.strikes = el.linescore.strikes;
-          game.outs = el.linescore.outs;
-
+          game.isTop = linescore.isTopInning || '';
+          game.inning = linescore.currentInning;
+          if (linescore.offense && linescore.offense.batter && linescore.offense.batter.fullName) {
+            game.batter = linescore.offense.batter.fullName || '';
+          }
+          game.balls = linescore.balls || '';
+          game.strikes = linescore.strikes || '';
+          game.outs = linescore.outs || '';
         }
-
 
         return game;
       });

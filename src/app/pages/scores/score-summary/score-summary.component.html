@@ -2,8 +2,12 @@
   <!-- Away Team -->
 
   <section class='game-header'>
-    <p class='game-time'>{{game.dateTime.toLocaleString()}}</p>
-    <p class="inning">{{game.inning}}</p>
+    <section class='game-time'>
+      <p>{{game.dateTime.toLocaleString()}}</p>
+    </section>
+    <section class="inning">
+      <p>{{game.inning}}</p>
+    </section>
     <section class="carat">
       <img
         [src]='game.isTop ? "assets/icons/round-arrow_drop_up-24px.svg" : "assets/icons/round-arrow_drop_down-24px.svg"'>

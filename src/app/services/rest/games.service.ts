@@ -63,9 +63,14 @@ export class GamesService {
           if (linescore.offense && linescore.offense.batter && linescore.offense.batter.fullName) {
             game.batter = linescore.offense.batter.fullName || '';
           }
-          game.balls = linescore.balls || '';
-          game.strikes = linescore.strikes || '';
-          game.outs = linescore.outs || '';
+          game.first = linescore.offense && linescore.offense.first ? true : false;
+          game.second = linescore.offense && linescore.offense.second ? true : false;
+          game.third = linescore.offense && linescore.offense.third ? true : false;
+
+          game.balls = linescore.balls || '0';
+          game.strikes = linescore.strikes || '0';
+          game.outs = linescore.outs || '0';
+
         }
 
         return game;

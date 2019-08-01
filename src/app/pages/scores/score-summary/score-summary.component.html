@@ -1,6 +1,4 @@
 <section class='game-container'>
-  <!-- Away Team -->
-
   <section class='game-header'>
     <section class='game-time'>
       <p>{{game.dateTime.toLocaleString()}}</p>
@@ -13,29 +11,44 @@
         [src]='game.isTop ? "assets/icons/round-arrow_drop_up-24px.svg" : "assets/icons/round-arrow_drop_down-24px.svg"'>
     </section>
   </section>
-  <section class='team-section' [ngClass]='game.awayTeam.teamCode'>
-    <section class='home-away'>Away</section>
-    <section class='team-icon'>
-      <img [src]='game.awayTeam.teamIconUrl' />
+  <section class='inner-section'>
+    <section class='teams'>
+      <section class='team-section' [ngClass]='game.awayTeam.teamCode'>
+        <section class='home-away'>Away</section>
+        <section class='team-icon'>
+          <img [src]='game.awayTeam.teamIconUrl' />
+        </section>
+        <section class='team-name'>
+          <p>{{game.awayTeam.teamName}}</p>
+        </section>
+        <section class='score'>
+          <p>{{game.awayTeam.runs}}</p>
+        </section>
+      </section>
+      <section class='team-section' [ngClass]='game.homeTeam.teamCode'>
+        <section class='home-away'>Home</section>
+        <section class='team-icon'>
+          <img [src]='game.homeTeam.teamIconUrl' />
+        </section>
+        <section class='team-name'>
+          <p>{{game.homeTeam.teamName}}</p>
+        </section>
+        <section class='score'>
+          <p>{{game.homeTeam.runs}}</p>
+        </section>
+      </section>
     </section>
-    <section class='team-name'>
-      <p>{{game.awayTeam.teamName}}</p>
-    </section>
-    <section class='score'>
-      <p>{{game.awayTeam.runs}}</p>
-    </section>
-  </section>
-  <!-- Home Team -->
-  <section class='team-section'  [ngClass]='game.homeTeam.teamCode'>
-    <section class='home-away'>Home</section>
-    <section class='team-icon'>
-      <img [src]='game.homeTeam.teamIconUrl' />
-    </section>
-    <section class='team-name'>
-      <p>{{game.homeTeam.teamName}}</p>
-    </section>
-    <section class='score'>
-      <p>{{game.homeTeam.runs}}</p>
+    <section class='bases'>
+      <section class='row top'>
+        <section class='base' [ngClass]='game.second ? "fill" : ""'></section>
+      </section>
+      <section class='row middle'>
+        <section class='base' [ngClass]='game.third ? "fill" : ""'></section>
+        <section class='base' [ngClass]='game.first ? "fill" : ""'></section>
+      </section>
+      <section class='row'>
+
+      </section>
     </section>
   </section>
   <section class="foot">

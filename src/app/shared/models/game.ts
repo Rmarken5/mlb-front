@@ -11,4 +11,7 @@ export class Game {
   balls: string;
   strikes: string;
   outs: string;
+  first: boolean;
+  second: boolean;
+  third: boolean;
 }

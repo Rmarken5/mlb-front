@@ -35,8 +35,7 @@ export class GamesService {
         const resHome = el.teams.home;
         const resaway = el.teams.away;
 
-
-
+        game.gameId = el.gamePk;
         homeTeam.teamName = resHome.team.shortName;
         homeTeam.runs = resHome.score;
         homeTeam.teamCode = resHome.team.abbreviation.toLowerCase();

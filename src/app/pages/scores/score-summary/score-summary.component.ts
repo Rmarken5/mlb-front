@@ -16,4 +16,5 @@ export class ScoreSummaryComponent implements OnInit {
   ngOnInit() {
   }
 
+
 }

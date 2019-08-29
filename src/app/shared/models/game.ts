@@ -1,6 +1,7 @@
 import { Team } from "./team";
 
 export class Game {
+  gameId: string;
   homeTeam: Team;
   awayTeam: Team;
   dateTime: Date;

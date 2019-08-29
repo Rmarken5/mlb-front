@@ -1,0 +1,11 @@
+.score-container{
+  display:flex;
+  flex-direction: row;
+  width:25%;
+  .team-container{
+    width: 66%;
+  }
+  .score{
+    width:33%;
+  }
+}

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BoxScoreService } from 'src/app/services/rest/box-score.service';
+import { BoxScore } from 'src/app/shared/models/box-score';
 
 @Component({
   selector: 'app-box-score',
@@ -8,12 +10,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BoxScoreComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) {
-    console.log('Derp');
-    route.params.subscribe(val => {
-      console.log('params: ', val);
+  public boxScore: BoxScore;
+
+  constructor(private route: ActivatedRoute, private _boxSvc: BoxScoreService) {
+
+    this.route.params.subscribe(val => {
+      this._boxSvc.findBoxForGame(val['gameId']);
     });
-   }
+
+    this._boxSvc.boxScoreObservable.subscribe(boxScore => {
+      this.boxScore = boxScore;
+      console.log(this.boxScore);
+    });
+
+
+  }
 
   ngOnInit() {
   }

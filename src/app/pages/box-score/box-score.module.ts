@@ -8,11 +8,11 @@ import { BallsStrikesOutsComponent } from './away-home-score-banner/balls-strike
 import { BaseRunnersComponent } from './away-home-score-banner/base-runners/base-runners.component';
 
 @NgModule({
-  declarations: [BoxScoreComponent],
+  declarations: [BoxScoreComponent, AwayHomeScoreBannerComponent, AbbreviatedTeamScoreComponent, BallsStrikesOutsComponent, BaseRunnersComponent],
   imports: [
     CommonModule,
     RouterModule,
   ],
-  exports:[BoxScoreComponent]
+  exports: [BoxScoreComponent]
 })
 export class BoxScoreModule { }

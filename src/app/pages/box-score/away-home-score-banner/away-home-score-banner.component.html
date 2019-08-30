@@ -1,3 +1,16 @@
-<p>
-  away-home-score-banner works!
-</p>
+<section class='banner-container'>
+
+  <app-abbreviated-team-score [teamName]='boxScore.awayTeam' [score]='"0"' [colorScheme]='boxScore.awayTeam'>
+  </app-abbreviated-team-score>
+
+  <app-abbreviated-team-score [teamName]='boxScore.homeTeam' [score]='"0"' [colorScheme]='boxScore.homeTeam'>
+  </app-abbreviated-team-score>
+
+  <app-balls-strikes-outs [balls]='boxScore.balls' [strikes]='boxScore.strikes' [outs]='boxScore.outs'>
+  </app-balls-strikes-outs>
+
+  <app-base-runners [isFirst]='boxScore.first' [isSecond]='boxScore.second' [isThird]='boxScore.third'>
+  </app-base-runners>
+
+
+</section>

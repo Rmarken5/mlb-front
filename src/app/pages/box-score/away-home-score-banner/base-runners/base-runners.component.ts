@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-base-runners',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./base-runners.component.scss']
 })
 export class BaseRunnersComponent implements OnInit {
+
+  @Input() isFirst: boolean;
+  @Input() isSecond: boolean;
+  @Input() isThird: boolean;
 
   constructor() { }
 

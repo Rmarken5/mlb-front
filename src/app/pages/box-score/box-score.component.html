@@ -1,3 +1,11 @@
-<p>
-  box-score works!
-</p>
+<section class='box-score-container'>
+
+  <app-away-home-score-banner *ngIf='boxScore' [boxScore]='boxScore'>
+
+  </app-away-home-score-banner>
+ <ng-container *ngIf='!boxScore'>
+   Loading you fucking dunce cap.
+ </ng-container>
+
+
+</section>

@@ -1,0 +1,35 @@
+.bases {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 5rem;
+  border: 1px black solid;
+  background-color: #27251F;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .base {
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid white;
+    transform: rotate(45deg);
+  }
+
+  .fill {
+    background-color: #FDB827;
+  }
+}
+
+.top {
+  align-items: flex-end;
+  justify-content: space-around;
+  margin-top:.25rem;
+}
+
+.middle {
+  align-items: baseline;
+  justify-content: space-around;
+}

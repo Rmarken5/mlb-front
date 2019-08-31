@@ -1,12 +1,16 @@
 .score-container{
   display:flex;
   flex-direction: row;
-  width:100%;
+  justify-content: space-around;
   border:1px solid;
   .team-container{
-    width: 66%;
+    display: flex;
+    width: 3rem;
+    justify-content: space-around;
   }
   .score{
-    width:33%;
+    display: flex;
+    width: 2rem;
+    justify-content: space-around;
   }
 }

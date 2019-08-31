@@ -1,0 +1,10 @@
+.box-score-container{
+  display: flex;
+
+  app-away-home-score-banner{
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+
+  }
+}

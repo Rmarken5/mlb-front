@@ -1,7 +1,8 @@
 .count-container {
   display: flex;
   flex-direction: row;
-  width: 35%;
+  justify-content: space-around;
 
-  .balls-strikes {}
+  .balls-strikes {
+  }
 }

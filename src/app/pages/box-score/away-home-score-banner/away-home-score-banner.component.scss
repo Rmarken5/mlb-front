@@ -1,14 +1,17 @@
 .banner-container {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   width: 100%;
+  justify-content: center;
   app-abbreviated-team-score{
     width: 25%;
+    min-width: 12rem;
   }
   app-balls-strikes-outs{
     width: 35%;
+    min-width: 15rem;
   }
-  app-balls-strikes-outs{
-    width:40%
+  app-base-runners{
+    width:15%
   }
 }

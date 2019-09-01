@@ -20,7 +20,7 @@ export interface Away {
   leftOnBase: number;
 }
 
-export interface Innings {
+export interface Inning {
   num: number;
   ordinalNum: string;
   home: Home;
@@ -68,7 +68,7 @@ export interface BoxScore {
   first: boolean;
   second: boolean;
   third: boolean;
-  innings: Innings[];
+  innings: Inning[];
   awayLineup: AwayLineup[];
   homeLineup: HomeLineup[];
 }

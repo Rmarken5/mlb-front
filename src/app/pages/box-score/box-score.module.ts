@@ -6,9 +6,12 @@ import { AbbreviatedTeamScoreComponent } from './away-home-score-banner/abbrevia
 import { AwayHomeScoreBannerComponent } from './away-home-score-banner/away-home-score-banner.component';
 import { BallsStrikesOutsComponent } from './away-home-score-banner/balls-strikes-outs/balls-strikes-outs.component';
 import { BaseRunnersComponent } from './away-home-score-banner/base-runners/base-runners.component';
+import { InningsComponent } from './innings/innings.component';
+import { ColumnComponent } from './innings/column/column.component';
+import { TeamNameComponent } from './innings/team-name/team-name.component';
 
 @NgModule({
-  declarations: [BoxScoreComponent, AwayHomeScoreBannerComponent, AbbreviatedTeamScoreComponent, BallsStrikesOutsComponent, BaseRunnersComponent],
+  declarations: [BoxScoreComponent, AwayHomeScoreBannerComponent, AbbreviatedTeamScoreComponent, BallsStrikesOutsComponent, BaseRunnersComponent, InningsComponent, ColumnComponent, TeamNameComponent],
   imports: [
     CommonModule,
     RouterModule,

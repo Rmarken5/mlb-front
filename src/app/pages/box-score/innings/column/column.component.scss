@@ -1,0 +1,11 @@
+.inning-column{
+  display: flex;
+  flex-flow: column nowrap;
+  .inning-block{
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    border: 1px solid black;
+  }
+}

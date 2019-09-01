@@ -1,11 +1,18 @@
-<section class='box-score-container'>
+<section  *ngIf='boxScore' class='box-score-container'>
 
-  <app-away-home-score-banner *ngIf='boxScore' [boxScore]='boxScore'>
+  <app-away-home-score-banner [boxScore]='boxScore'>
 
   </app-away-home-score-banner>
- <ng-container *ngIf='!boxScore'>
-   Loading you fucking dunce cap.
- </ng-container>
+
+  <app-innings [innings]='boxScore.innings'
+  [awayTeam]='boxScore.awayTeam'
+   [homeTeam]='boxScore.homeTeam'>
+  </app-innings>
+
+
 
 
 </section>
+<ng-container *ngIf='!boxScore'>
+  Loading you fucking dunce cap.
+</ng-container>

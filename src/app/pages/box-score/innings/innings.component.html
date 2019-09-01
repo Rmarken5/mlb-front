@@ -1,0 +1,14 @@
+<section class='innings-section'>
+  <section class='team-section'>
+    <app-team-name [teamName]='awayTeam'>
+
+    </app-team-name>
+    <app-team-name [teamName]='homeTeam'>
+
+    </app-team-name>
+  </section>
+  <section class='innings'>
+    <app-column *ngFor='let inning of innings' [inning]='inning'></app-column>
+
+  </section>
+</section>

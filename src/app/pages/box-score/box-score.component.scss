@@ -1,6 +1,6 @@
 .box-score-container{
   display: flex;
-
+  flex-flow: column;
   app-away-home-score-banner{
     display: flex;
     width: 100%;

@@ -1,0 +1,15 @@
+.innings-section{
+  display: flex;
+  flex-flow: row nowrap;
+  width:100%;
+  overflow-x: scroll;
+  .team-section{
+    display: flex;
+    flex-flow: column nowrap;
+
+  }
+  .innings{
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}

@@ -1,0 +1,34 @@
+.batter-stats-container {
+  display: flex;
+  flex-flow: column nowrap;
+
+  .batter-stats-row {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .stat {
+      display: flex;
+      height: 2rem;
+      justify-content: center;
+      align-items: center;
+      border: solid 1px;
+    }
+
+    .s {
+      width: 12.5%;
+      min-width: 4.5rem;
+    }
+
+    .l {
+      width: 50%;
+      min-width: 12rem;
+    }
+    .baseline {
+      display: flex;
+      align-items: baseline;
+    }
+
+  }
+
+
+}

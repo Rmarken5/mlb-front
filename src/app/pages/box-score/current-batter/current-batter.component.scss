@@ -1,0 +1,14 @@
+.current-batter-container{
+  display: flex;
+  width:100%;
+  min-width: 30rem;
+  flex-flow: row nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  app-batter-name{
+    width: 20%;
+  }
+  app-batter-stats{
+    width: 80%;
+  }
+}

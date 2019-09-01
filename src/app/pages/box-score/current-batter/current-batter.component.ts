@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CurrentBatter } from 'src/app/shared/models/box-score';
 
 @Component({
   selector: 'app-current-batter',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./current-batter.component.scss']
 })
 export class CurrentBatterComponent implements OnInit {
+
+
+  @Input() batter: CurrentBatter;
 
   constructor() { }
 

@@ -1,0 +1,13 @@
+.batter-name-container {
+  display: flex;
+  width: 100%;
+  .batter-name-section {
+    display: flex;
+    width: 100%;
+    //min-width: 10rem;
+    height: calc(4rem + 2px);
+    justify-content: center;
+    align-items: center;
+    border: solid 1px;
+  }
+}

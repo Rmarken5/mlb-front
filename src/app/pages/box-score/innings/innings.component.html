@@ -1,9 +1,9 @@
 <section class='innings-section'>
   <section class='team-section'>
-    <app-team-name [teamName]='awayTeam'>
+    <app-team-name [teamName]='awayTeam' [ngClass]='awayTeam.toLowerCase()'>
 
     </app-team-name>
-    <app-team-name [teamName]='homeTeam'>
+    <app-team-name [teamName]='homeTeam' [ngClass]='homeTeam.toLowerCase()'>
 
     </app-team-name>
   </section>

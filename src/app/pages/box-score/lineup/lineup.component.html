@@ -1,3 +1,10 @@
-<p>
-  lineup works!
-</p>
+<section class='lineup-container'>
+
+  <app-header>
+
+  </app-header>
+
+  <app-position *ngFor='let player of lineup' [player]='player'>
+  </app-position>
+
+</section>

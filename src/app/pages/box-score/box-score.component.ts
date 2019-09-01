@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BoxScoreService } from 'src/app/services/rest/box-score.service';
-import { BoxScore } from 'src/app/shared/models/box-score';
+import { BoxScore, GameStats } from 'src/app/shared/models/box-score';
 
 @Component({
   selector: 'app-box-score',
@@ -11,6 +11,7 @@ import { BoxScore } from 'src/app/shared/models/box-score';
 export class BoxScoreComponent implements OnInit {
 
   public boxScore: BoxScore;
+
 
   constructor(private route: ActivatedRoute, private _boxSvc: BoxScoreService) {
 

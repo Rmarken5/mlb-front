@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { GameStats } from 'src/app/shared/models/box-score';
 
 @Component({
   selector: 'app-lineup',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LineupComponent implements OnInit {
 
-  constructor() { }
+  @Input() lineup: GameStats[];
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }

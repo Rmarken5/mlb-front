@@ -27,21 +27,8 @@ export interface Inning {
   away: Away;
 }
 
-export interface AwayLineup {
-  fullName: string;
-  position: string;
-  atBats: number;
-  runs: number;
-  hits: number;
-  runsBattedIn: number;
-  baseOnBalls: number;
-  strikeOuts: number;
-  leftOnBase: number;
-  battingAverage: string;
-  onBasePlusSlugging: string;
-}
 
-export interface HomeLineup {
+export interface GameStats {
   fullName: string;
   position: string;
   atBats: number;
@@ -69,6 +56,6 @@ export interface BoxScore {
   second: boolean;
   third: boolean;
   innings: Inning[];
-  awayLineup: AwayLineup[];
-  homeLineup: HomeLineup[];
+  awayLineup: GameStats[];
+  homeLineup: GameStats[];
 }

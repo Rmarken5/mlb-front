@@ -1,0 +1,29 @@
+.lineup-header-container{
+  display:flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  align-items: baseline;
+  .batter{
+    width:20%;
+    min-width: 15rem;
+    border: 1px solid black;
+    border-right: 0px;
+    p{
+      margin: 0;
+    }
+  }
+  .stat{
+    display:flex;
+    width: 8.87%;
+    min-width: 3.5rem;
+    justify-content: space-around;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    p{
+      margin:0;
+    }
+  }
+  .stat:last-of-type{
+    border-right: 1px solid black;
+  }
+}

@@ -12,9 +12,12 @@ import { TeamNameComponent } from './innings/team-name/team-name.component';
 import { CurrentBatterComponent } from './current-batter/current-batter.component';
 import { BatterNameComponent } from './current-batter/batter-name/batter-name.component';
 import { BatterStatsComponent } from './current-batter/batter-stats/batter-stats.component';
+import { LineupComponent } from './lineup/lineup.component';
+import { HeaderComponent } from './lineup/header/header.component';
+import { PositionComponent } from './lineup/position/position.component';
 
 @NgModule({
-  declarations: [BoxScoreComponent, AwayHomeScoreBannerComponent, AbbreviatedTeamScoreComponent, BallsStrikesOutsComponent, BaseRunnersComponent, InningsComponent, ColumnComponent, TeamNameComponent, CurrentBatterComponent, BatterNameComponent, BatterStatsComponent],
+  declarations: [BoxScoreComponent, AwayHomeScoreBannerComponent, AbbreviatedTeamScoreComponent, BallsStrikesOutsComponent, BaseRunnersComponent, InningsComponent, ColumnComponent, TeamNameComponent, CurrentBatterComponent, BatterNameComponent, BatterStatsComponent, LineupComponent, HeaderComponent, PositionComponent],
   imports: [
     CommonModule,
     RouterModule,

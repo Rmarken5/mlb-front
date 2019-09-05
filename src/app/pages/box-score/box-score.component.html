@@ -1,19 +1,19 @@
-<section  *ngIf='boxScore' class='box-score-container'>
+<section *ngIf='boxScore' class='box-score-container'>
 
   <app-away-home-score-banner [boxScore]='boxScore'>
 
   </app-away-home-score-banner>
 
-  <app-innings [innings]='boxScore.innings'
-  [awayTeam]='boxScore.awayTeam'
-   [homeTeam]='boxScore.homeTeam'>
+  <app-innings *ngIf='boxScore.innings' [innings]='boxScore.innings' [awayTeam]='boxScore.awayTeam' [homeTeam]='boxScore.homeTeam'>
   </app-innings>
 
 
-<app-current-batter [batter]='boxScore.currentBatter'
-></app-current-batter>
+  <app-current-batter *ngIf='boxScore.currentBatter' [batter]='boxScore.currentBatter'></app-current-batter>
 
-<app-lineup [lineup]='boxScore.awayLineup'></app-lineup>
+  <app-team-toggle [homeTeamName]='boxScore.homeTeam' [awayTeamName]='boxScore.awayTeam'
+    (selectedTeam)='teamListener($event)'></app-team-toggle>
+
+  <app-lineup [lineup]='selectedLineup'></app-lineup>
 
 </section>
 <ng-container *ngIf='!boxScore'>

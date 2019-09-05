@@ -1,0 +1,8 @@
+<section class='team-toggle-container'>
+  <section id='awayTeam' [ngClass]='awayTeamName.toLowerCase()' (click)='toggleAway()'>
+    {{awayTeamName}}
+  </section>
+  <section id='homeTeam' [ngClass]='homeTeamName.toLowerCase()' (click)='toggleHome()'>
+    {{homeTeamName}}
+  </section>
+</section>
